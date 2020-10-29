@@ -15,9 +15,6 @@
         { label: '2acc-off', time: 0 }, //5
         { label: 'comb-on', time: 0 }, //6
     ];
-    function getPos(time) {
-        return (100 * time) / duration;
-    }
 
     $: s3r_blackout = markers[1].time - markers[0].time;
     $: s3r_accel = markers[2].time - markers[1].time;
@@ -46,6 +43,9 @@
         }
     }
 
+    function getPos(time) {
+        return (100 * time) / duration;
+    }
     function clickBar(evt) {
         current = (evt.offsetX / bar.offsetWidth) * duration;
     }
