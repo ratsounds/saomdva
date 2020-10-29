@@ -67,6 +67,7 @@ const config = {
   },
   plugins: [
     new HtmlWebpackPlugin({
+      title: 'SAO:MD:VA',
       appMountId: 'app',
       filename: 'index.html'
     }),
