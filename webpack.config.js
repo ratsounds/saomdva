@@ -16,7 +16,7 @@ const config = {
     mainFields: ['svelte', 'browser', 'module', 'main']
   },
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'docs'),
     filename: '[name].[contenthash].js'
   },
   module: {
@@ -86,7 +86,7 @@ const config = {
     }
   },
   devServer: {
-    contentBase: path.join(__dirname, 'dist')
+    contentBase: path.join(__dirname, 'docs')
   }
 };
 
