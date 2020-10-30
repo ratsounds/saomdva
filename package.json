@@ -13,7 +13,6 @@
     "build-prod": "webpack --mode production"
   },
   "dependencies": {
-    "svelte-seo": "^1.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.3",
