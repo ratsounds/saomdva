@@ -1,4 +1,5 @@
 <script>
+    import SvelteSeo from 'svelte-seo';
     import 'modern-css-reset';
     import VA from './VA.svelte';
 </script>
@@ -16,20 +17,8 @@
     }
 </style>
 
-<svelte:head>
-    <meta name="title" content="SAO:MD:VA" />
-    <meta name="description"
-        content="This web app is a tool for SAO:MD(Sword Art Online - Memory Defrag) skill durations video analysis." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://ratsounds.github.io/saomdva/" />
-    <meta property="og:title" content="SAO:MD:VA" />
-    <meta property="og:description"
-        content="This web app is a tool for SAO:MD(Sword Art Online - Memory Defrag) skill durations video analysis." />
-    <meta property="og:image" content="https://ratsounds.github.io/saomdva/pgp.png" />
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://ratsounds.github.io/saomdva/" />
-    <meta property="twitter:site" content="@ratsounds" />    
-</svelte:head>
+<SvelteSeo
+    openGraph={{ title: 'SAO:MD:VA', description: 'This web app is a tool for SAO:MD(Sword Art Online - Memory Defrag) skill durations video analysis.', url: 'https://ratsounds.github.io/saomdva/', type: 'website', images: [{ url: 'https://ratsounds.github.io/saomdva/pgp.png', width: 1280, height: 640, alt: 'SAO:MD:VA' }] }} />
 <main>
     <VA />
 </main>
