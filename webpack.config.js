@@ -1,13 +1,14 @@
 const webpack = require('webpack');
 const path = require('path');
+const CopyPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const config = {
-	entry: {
-		bundle: ['./src/index.js']
-	},
+  entry: {
+    bundle: ['./src/index.js']
+  },
   resolve: {
     alias: {
       svelte: path.resolve('node_modules', 'svelte')
@@ -53,19 +54,40 @@ const config = {
         use: 'file-loader'
       },
       {
-        test: /\.png$/,
+        test: /\.(png|jpe?g|gif)$/i,
+        exclude: [
+          path.resolve(__dirname, "static")
+        ],
         use: [
           {
             loader: 'url-loader',
             options: {
-              mimetype: 'image/png'
             }
           }
         ]
-      }
+      },
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        include: [
+          path.resolve(__dirname, "static")
+        ], use: [
+          {
+            loader: 'file-loader',
+            options: {
+            }
+          }
+        ]
+      },
     ]
   },
   plugins: [
+    new CopyPlugin({
+      patterns: [
+        { from: 'src/ogp.png' }
+      ],
+      options: {
+      },
+    }),
     new HtmlWebpackPlugin({
       title: 'SAO:MD:VA',
       appMountId: 'app',
