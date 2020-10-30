@@ -22,7 +22,7 @@
   <meta property="og:url" content="https://ratsounds.github.io/saomdva/">
   <meta property="og:description" content="This web app is a tool for SAO:MD(Sword Art Online - Memory Defrag) skill durations video analysis.">
   <meta property="og:type" content="article">
-  <meta property="og:image" content="https://ratsounds.github.io/saomdva/img/ogp.png">    
+  <meta property="og:image" content="https://ratsounds.github.io/saomdva/ogp.png">    
 </svelte:head>
 <main>
     <VA />
