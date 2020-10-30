@@ -1,6 +1,6 @@
 <script>
   import 'modern-css-reset';
-  import Mov from './Mov.svelte';
+  import VA from './VA.svelte';
 </script>
 <style>
   main {
@@ -16,5 +16,5 @@
 
 </style>
 <main>
-<Mov/>
+<VA/>
 </main>
