@@ -17,17 +17,18 @@
 </style>
 
 <svelte:head>
-    <meta property="og:title" content="SAO:MD:VA" />
-    <meta property="og:site_name" content="SAO:MD:VA" />
-    <meta property="og:url" content="https://ratsounds.github.io/saomdva/" />
-    <meta
-        property="og:description"
+    <meta name="title" content="SAO:MD:VA" />
+    <meta name="description"
         content="This web app is a tool for SAO:MD(Sword Art Online - Memory Defrag) skill durations video analysis." />
-    <meta property="og:type" content="article" />
-    <meta property="og:image" content="https://ratsounds.github.io/saomdva/ogp.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ratsounds.github.io/saomdva/" />
+    <meta property="og:title" content="SAO:MD:VA" />
+    <meta property="og:description"
+        content="This web app is a tool for SAO:MD(Sword Art Online - Memory Defrag) skill durations video analysis." />
+    <meta property="og:image" content="https://ratsounds.github.io/saomdva/pgp.png" />
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://ratsounds.github.io/saomdva/" />
-    <meta property="twitter:site" content="@ratsounds" />
+    <meta property="twitter:site" content="@ratsounds" />    
 </svelte:head>
 <main>
     <VA />
