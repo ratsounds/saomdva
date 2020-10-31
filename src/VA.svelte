@@ -43,7 +43,9 @@
     $: {
         skills = [];
         const step = data.flows[type];
-        let blackout, duration, acc, comb, gap, blackout2, acc2, duration2;
+        let blackout, duration, acc, comb, gap, blackout2, acc2;
+        let gt_comb, gt_acc, gt_duration;
+        let accel_rate = 3;
         switch (type) {
             case '4*':
                 offset = step[0].time;
@@ -85,40 +87,45 @@
                 acc = step[2].time - step[1].time;
                 duration = step[3].time - step[1].time;
                 blackout2 = step[4].time - step[3].time;
-                acc2 = step[5].time - step[4].time;
-                comb = step[6].time - step[4].time;
+                acc2 = step[6].time - step[4].time;
+                comb = step[5].time - step[4].time;
                 gap = duration - comb;
+                gt_acc = acc / accel_rate;
+                gt_duration = gt_acc + duration - acc;
+                gt_comb = comb < acc ? comb / accel_rate : gt_acc + comb - acc;
                 skills.push({
                     post: getPostfix(POSTFIX_1ST),
                     time: getSkillTimeObject(blackout, duration, acc, comb, gap),
                     rt: getSkillTimeObject(blackout, duration, acc, comb, gap),
-                    gt: getSkillTimeObject(blackout, duration, acc, comb, gap),
+                    gt: getSkillTimeObject(0, gt_duration, gt_acc, gt_comb, gap),
                 });
                 skills.push({
                     post: getPostfix(POSTFIX_2ND),
                     time: getSkillTimeObject(blackout2, duration, acc2, comb, gap),
                     rt: getSkillTimeObject(blackout2, duration, acc2, comb, gap),
-                    gt: getSkillTimeObject(blackout2, duration, acc2, comb, gap),
+                    gt: getSkillTimeObject(0, gt_duration, gt_acc, gt_comb, gap),
                 });
                 break;
             case '6*xs':
                 offset = step[0].time;
                 blackout = step[1].time - step[0].time;
                 comb = step[2].time - step[1].time;
+                gt_comb = comb / accel_rate;
                 skills.push({
                     post: getPostfix(POSTFIX_1ST_P1),
                     time: getSkillTimeObject(blackout, comb, comb, comb, 0),
                     rt: getSkillTimeObject(blackout, comb, comb, comb, 0),
-                    gt: getSkillTimeObject(blackout, comb, comb, comb, 0),
+                    gt: getSkillTimeObject(0, gt_comb, gt_comb, gt_comb, 0),
                 });
                 blackout2 = step[3].time - step[2].time;
                 gap = step[5].time - step[3].time;
                 acc = step[4].time - step[3].time;
+                gt_acc = acc / accel_rate;
                 skills.push({
                     post: getPostfix(POSTFIX_1ST_P1),
                     time: getSkillTimeObject(blackout2, gap, acc, 0, gap),
                     rt: getSkillTimeObject(blackout2, comb + gap, comb + acc, 0, gap),
-                    gt: getSkillTimeObject(blackout2, comb + gap, comb + acc, 0, gap),
+                    gt: getSkillTimeObject(0, gt_comb + gap, gt_comb + gt_acc, 0, gap),
                 });
 
                 break;
@@ -328,7 +335,7 @@
         position: relative;
         padding: 0.25em;
         overflow: hidden;
-        height:20em;
+        height: 20em;
     }
     .info * {
         text-indent: 0.5em;
@@ -393,18 +400,20 @@
     <div id="bar" class="bar" on:click|self={clickBar} bind:this={bar}>
         <div class="current" style="width:{getPos(current)}%" />
         {#each data.flows[type] as marker, i}
+            {#if marker.action !== 'result'}
             <div id={marker.action} class="marker" style="left:{getPos(marker.time)}%; height:{i * 2 + 4}em">
                 <button class="setTime" on:click|stopPropagation={() => setTime(type, i)} />
                 <p on:click|stopPropagation={() => moveTo(marker.time)}>{marker.action}:{f3(marker.time)}</p>
             </div>
+            {/if}
         {/each}
-        <div class="marker" style="left:{getPos(current)}%; height:{data.flows[type].length * 2 + 4}em">
+        <div class="marker" style="left:{getPos(current)}%; height:{data.flows[type].length * 2 + 2}em">
             <p>current:{f3(current)}</p>
         </div>
     </div>
     <button on:click={next}>next</button>
 </div>
-<div class="info">
+<div class="info" id="result">
     <div class="realtime">
         <SkillTimeline {videoDuration} {offset} {skills} />
     </div>

@@ -97,6 +97,15 @@ const resources = {
         ],
         action: 'comb_on',
     },
+    done:{
+        title: 'done!',
+        en: [
+            "check bottom ss3 timeline.",
+            'R: Real time duration',
+            'G: in-Game duration'
+        ],
+        action: 'result',
+    }
 };
 
 export default {
@@ -114,11 +123,13 @@ export default {
         '4*': [
             resources.skill_on,
             resources.skill_on_2,
+            resources.done,
         ],
         '5*': [
             resources.skill_on,
             resources.skill_on_2,
             resources.comb_on,
+            resources.done,
         ],
         '6*': [
             resources.skill_on,
@@ -128,6 +139,7 @@ export default {
             resources.acc_on_2,
             resources.comb_on,
             resources.acc_off_2,
+            resources.done,
         ],
         '6*xs': [
             resources.skill_on,
@@ -136,6 +148,7 @@ export default {
             resources.mid_off,
             resources.acc_off,
             resources.skill_on_2,
+            resources.done,
         ]
     }
 }

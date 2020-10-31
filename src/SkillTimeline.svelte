@@ -11,6 +11,9 @@
 </script>
 
 <style>
+    .wrapper * {
+        white-space: nowrap;
+    }
     .blackout {
         background-color: #444;
         color: #fff;
@@ -47,20 +50,20 @@
         {#if skill.time.blackout > 0}
             <div class="blackout" style="width:{getPos(skill.time.blackout)}%">
                 <p>blackout{skill.post.blackout}</p>
-                <p>{skill.rt.blackout}</p>
-                <p>{skill.gt.blackout}</p>
+                <p>R {skill.rt.blackout}</p>
+                <p>G {skill.gt.blackout}</p>
             </div>
         {/if}
         <div class="duration" style="width:{getPos(skill.time.duration)}%">
             <p>duration{skill.post.duration}</p>
-            <p>{skill.rt.duration}</p>
-            <p>{skill.gt.duration}</p>
+            <p>R {skill.rt.duration}</p>
+            <p>G {skill.gt.duration}</p>
             <div class="wrapper">
                 {#if skill.time.acc > 0}
                 <div class="acceleration" style="width:{(100 * getPos(skill.time.acc)) / getPos(skill.time.duration)}%">
                     <p>acceleration{skill.post.acc}</p>
-                    <p>{skill.rt.acc}</p>
-                    <p>{skill.gt.acc}</p>
+                    <p>R {skill.rt.acc}</p>
+                    <p>G {skill.gt.acc}</p>
                 </div>
                 {/if}
             </div>
@@ -68,15 +71,15 @@
                 {#if skill.time.comb > 0}
                 <div class="combination" style="width:{(100 * getPos(skill.time.comb)) / getPos(skill.time.duration)}%">
                     <p>combination{skill.post.comb}</p>
-                    <p>{skill.rt.comb}</p>
-                    <p>{skill.gt.comb}</p>
+                    <p>R {skill.rt.comb}</p>
+                    <p>G {skill.gt.comb}</p>
                 </div>
                 {/if}
                 {#if skill.time.gap > 0}
                     <div class="gap" style="width:{(100 * getPos(skill.time.gap)) / getPos(skill.time.duration)}%">
                         <p>gap{skill.post.gap}</p>
-                        <p>{skill.rt.gap}</p>
-                        <p>{skill.gt.gap}</p>
+                        <p>R {skill.rt.gap}</p>
+                        <p>G {skill.gt.gap}</p>
                     </div>
                 {/if}
             </div>
