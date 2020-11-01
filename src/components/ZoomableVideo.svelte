@@ -21,8 +21,8 @@
     };
     function down(evt) {
         mouse.down = true;
-        mouse.sx = evt.clientX;
-        mouse.sy = evt.clientY;
+        mouse.sx = evt.clientX - x;
+        mouse.sy = evt.clientY - y;
     }
     function up(evt) {
         mouse.down = false;
