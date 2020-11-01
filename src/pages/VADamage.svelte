@@ -74,7 +74,7 @@
                     if (damages.length > 1) {
                         damages = damages.filter((m) => m !== entry);
                     }
-                }}/>
+                }} />
         {/each}
     </div>
 </div>

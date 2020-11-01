@@ -207,8 +207,8 @@ video {
     grid-template-columns: 1fr 2fr 1fr;
 }
 
-#damage-records > .total{
-    font-size :150%;
+#damage-records > .total {
+    font-size: 150%;
     font-weight: bold;
     padding-left: 1em;
 }
@@ -218,7 +218,7 @@ video {
     grid-template-columns: 2em 1fr 3em 3em;
     margin-top: 0.25em;
 }
-.input-damage > .index{
+.input-damage > .index {
     display: flex;
     align-items: center;
     justify-content: center;

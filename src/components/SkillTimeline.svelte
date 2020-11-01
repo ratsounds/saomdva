@@ -17,7 +17,7 @@
     .blackout {
         background-color: #444;
         color: #fff;
-        margin:0 1px;
+        margin: 0 1px;
     }
     .duration {
         background-color: #fc0;

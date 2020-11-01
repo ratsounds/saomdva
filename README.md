@@ -1,4 +1,5 @@
 # SAO:MD:VA
+
 This web app is a tool for SAO:MD(Sword Art Online - Memory Defrag) skill durations video analysis.
 
 ## Building and running on localhost
