@@ -207,6 +207,10 @@ video {
     grid-template-columns: 1fr 2fr 1fr;
 }
 
+#damage video {
+    max-height: 90vh;
+}
+
 #damage-records > .total {
     font-size: 150%;
     font-weight: bold;
