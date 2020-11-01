@@ -1,6 +1,8 @@
 <script>
     import { tick } from 'svelte';
 
+    export let currentTime = 0;
+    export let duration = 1;
     let scale = 1;
     let x = 0;
     let y = 0;
@@ -52,6 +54,8 @@
     <video
         {...$$restProps}
         style="transform:scale({scale}) translate({x}px, {y}px)"
+        bind:currentTime
+        bind:duration
         bind:this={video}
         on:mousedown={down}
         on:mouseup={up}
