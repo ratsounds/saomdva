@@ -35,7 +35,7 @@ const resources = {
     select_type: {
         title: 'select unit type',
         en: [
-            'select unit type from following selecter.',
+            'select unit type from following selecter or click selected to unselect.',
         ],
         action: 'select_type',
     },
@@ -97,7 +97,7 @@ const resources = {
         ],
         action: 'comb_on',
     },
-    done:{
+    done: {
         title: 'done!',
         en: [
             "check bottom ss3 timeline.",
@@ -116,6 +116,8 @@ export default {
         resources.open_video,
         resources.seek_video,
         resources.set_marker,
+    ],
+    static: [
         resources.select_type,
     ],
     flows: {

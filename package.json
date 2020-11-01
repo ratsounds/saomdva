@@ -12,8 +12,7 @@
     "build-dev": "webpack --mode development",
     "build-prod": "webpack --mode production"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.12.3",
     "@babel/preset-env": "^7.12.1",
@@ -34,6 +33,9 @@
     "postcss-loader": "^4.0.4",
     "prettier": "^2.1.2",
     "style-loader": "^2.0.0",
+    "stylelint": "^13.7.2",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-recommended": "^3.0.0",
     "svelte": "^3.29.4",
     "svelte-loader": "^2.13.6",
     "svelte-preprocess": "^4.5.2",

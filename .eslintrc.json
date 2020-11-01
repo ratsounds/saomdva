@@ -15,5 +15,5 @@
   "globals": {
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly"
-  }
+  }  
 }

@@ -17,7 +17,7 @@
     .blackout {
         background-color: #444;
         color: #fff;
-        margin: 0 1px;
+        margin:0 1px;
     }
     .duration {
         background-color: #fc0;
@@ -60,20 +60,24 @@
             <p>G {skill.gt.duration}</p>
             <div class="wrapper">
                 {#if skill.time.acc > 0}
-                <div class="acceleration" style="width:{(100 * getPos(skill.time.acc)) / getPos(skill.time.duration)}%">
-                    <p>acceleration{skill.post.acc}</p>
-                    <p>R {skill.rt.acc}</p>
-                    <p>G {skill.gt.acc}</p>
-                </div>
+                    <div
+                        class="acceleration"
+                        style="width:{(100 * getPos(skill.time.acc)) / getPos(skill.time.duration)}%">
+                        <p>acceleration{skill.post.acc}</p>
+                        <p>R {skill.rt.acc}</p>
+                        <p>G {skill.gt.acc}</p>
+                    </div>
                 {/if}
             </div>
             <div class="wrapper">
                 {#if skill.time.comb > 0}
-                <div class="combination" style="width:{(100 * getPos(skill.time.comb)) / getPos(skill.time.duration)}%">
-                    <p>combination{skill.post.comb}</p>
-                    <p>R {skill.rt.comb}</p>
-                    <p>G {skill.gt.comb}</p>
-                </div>
+                    <div
+                        class="combination"
+                        style="width:{(100 * getPos(skill.time.comb)) / getPos(skill.time.duration)}%">
+                        <p>combination{skill.post.comb}</p>
+                        <p>R {skill.rt.comb}</p>
+                        <p>G {skill.gt.comb}</p>
+                    </div>
                 {/if}
                 {#if skill.time.gap > 0}
                     <div class="gap" style="width:{(100 * getPos(skill.time.gap)) / getPos(skill.time.duration)}%">
