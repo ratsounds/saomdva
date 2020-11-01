@@ -69,7 +69,12 @@
                     if (damages[damages.length - 1].damage !== 0) {
                         damages.push({ damage: 0, crit: true });
                     }
-                }} />
+                }}
+                onClickRemove={() => {
+                    if (damages.length > 1) {
+                        damages = damages.filter((m) => m !== entry);
+                    }
+                }}/>
         {/each}
     </div>
 </div>
